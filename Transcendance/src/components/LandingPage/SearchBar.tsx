@@ -1,8 +1,12 @@
 import SearchIcon from '@mui/icons-material/Search';
 
-export default function SearchBar() {
+interface SearchBarProps {
+    classValue?: string; // facultatif
+}
+
+export default function SearchBar({ classValue }: SearchBarProps) {
     return (
-        <form className="relative w-80">   
+        <form className={classValue}>   
             <label className="block mb-2.5 text-sm font-medium text-heading sr-only">
                 Search
             </label>

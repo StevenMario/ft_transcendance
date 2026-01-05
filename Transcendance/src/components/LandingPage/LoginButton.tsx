@@ -3,12 +3,15 @@ import Button from "@mui/material/Button";
 export default function LoginButton() {
   return (
     <Button
-    //   onClick={onClick}
+      //   onClick={onClick}
       disableElevation
-      sx={{ color: "#fff" }}
+      sx={{
+         color: "#fff" ,
+        borderRadius: "12px",
+      }}
       className="
         normal-case
-        rounded-full
+        w-25
         px-10
         py-3
         text-lg
