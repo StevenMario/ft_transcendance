@@ -7,7 +7,7 @@ function HeroSection() {
         "Mecanicien",
         "Artiste",
         "UX / UI Designer",
-        "UX / UI Designer"
+        "Comptable"
     ];
     const tagButtonStyle = {
         borderColor: "#C1C1C1",
@@ -23,7 +23,7 @@ function HeroSection() {
     return (
         <section className="max-w-7xl mx-auto px-4 flex  items-center h-150">
             <div className="flex flex-col gap-4">
-                <h1 className="text-6xl font-bold leading-tight ">
+                <h1 className="lg:text-6xl font-bold leading-tight text-4xl">
                     Find solutions <br />
                     to your problem with <br />
                     <span className="
@@ -36,7 +36,7 @@ function HeroSection() {
                     >
                         M’kandra</span>
                 </h1>
-                <div className='flex flex-wrap gap-2 w-150 h-20 items-center mt-3'>
+                <div className='flex flex-wrap gap-2 h-20 items-center mt-3'>
                     {tags.map((tag, index) => {
                         return (
                             <Button
