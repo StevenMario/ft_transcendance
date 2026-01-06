@@ -1,8 +1,28 @@
-
+import { Button } from '@mui/material'
+import SearchBarSecond from './SearchBarSecond.tsx';
 function HeroSection() {
+    const tags = [
+        "Développeur",
+        "Docteur",
+        "Mecanicien",
+        "Artiste",
+        "UX / UI Designer",
+        "UX / UI Designer"
+    ];
+    const tagButtonStyle = {
+        borderColor: "#C1C1C1",
+        color: "#444444",
+        textTransform: "none",
+        borderRadius: "30px",
+        "&:hover": {
+            borderColor: "#F6865F",
+            color: "#F6865F"
+        },
+    };
+
     return (
-        <section className="max-w-7xl mx-auto px-4 flex items-center h-200">
-            <div>
+        <section className="max-w-7xl mx-auto px-4 flex  items-center h-150">
+            <div className="flex flex-col gap-4">
                 <h1 className="text-6xl font-bold leading-tight ">
                     Find solutions <br />
                     to your problem with <br />
@@ -16,6 +36,18 @@ function HeroSection() {
                     >
                         M’kandra</span>
                 </h1>
+                <div className='flex flex-wrap gap-2 w-150 h-20 items-center mt-3'>
+                    {tags.map((tag, index) => {
+                        return (
+                            <Button
+                                sx={tagButtonStyle}
+                                variant="outlined"
+                            >{tag}</Button>
+                        );
+                    })}
+                </div>
+                <SearchBarSecond
+                />
             </div>
             <img
                 className=" hidden w-160 h-160 mt-5 align-middle lg:flex"
