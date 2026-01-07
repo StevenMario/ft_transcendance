@@ -23,8 +23,8 @@ function AccessService() {
               key={index}
               className="group p-4 md:p-6 rounded-xl  border border-gray-300 hover:border-amber-600 transition-all duration-300 hover:shadow-lg cursor-pointer"
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-3xl bg-orange-500/50 text-primary flex items-center justify-center mb-3 group-hover:border-amber-600 group-hover:text-primary-foreground transition-all duration-300">
-                <service.icon size={20} className="md:w-6 md:h-6 " />
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-3xl bg-orange-400/10 text-primary flex items-center justify-center mb-3 group-hover:border-amber-600 group-hover:text-primary-foreground transition-all duration-300">
+                <service.icon size={20}  className="md:w-6 md:h-6 text-orange-700" />
               </div>
               <h3 className="text-xs md:text-sm font-medium text-foreground">
                 {service.title}
