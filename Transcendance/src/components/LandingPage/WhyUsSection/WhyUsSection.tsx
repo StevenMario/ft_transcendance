@@ -34,7 +34,7 @@ function WhyUsSection() {
                 {reasons.map((reason, index) => (
                     <div
                         key={index}
-                        className="group p-6 rounded-2xl bg-background border border-b border-gray-400 hover:border-amber-500 transition-all duration-300 hover:shadow-card"
+                        className="group bg-amber-600/2 p-6 rounded-2xl bg-background border border-b border-gray-300 hover:border-amber-500 transition-all duration-300 hover:shadow-lg"
                         style={{ animationDelay: `${index * 100}ms` }}
                     >
                         <div className={`w-12 h-12 rounded-xl ${reason.color} flex items-center justify-center mb-4`}>
