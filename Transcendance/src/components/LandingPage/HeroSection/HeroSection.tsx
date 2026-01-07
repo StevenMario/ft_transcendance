@@ -29,7 +29,7 @@ function HeroSection() {
                     <span className="
                             text-transparent
                             bg-clip-text
-                            bg-gradient-to-r
+                            bg-linear-to-r
                             from-orange-400
                             via-pink-500
                             to-red-500"
@@ -37,7 +37,7 @@ function HeroSection() {
                         M’kandra</span>
                 </h1>
                 <div className='flex flex-wrap gap-2 h-20 items-center mt-3'>
-                    {tags.map((tag, index) => {
+                    {tags.map((tag) => {
                         return (
                             <Button
                                 sx={tagButtonStyle}
