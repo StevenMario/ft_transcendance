@@ -1,7 +1,7 @@
 import './App.css'
 import './index.css'
-import NavBar from './components/NavBar/NavBar.tsx'
-import LandingPage from './components/LandingPage/LandingPage.tsx'
+import NavBar from './components/ui/NavBar/NavBar.tsx'
+import LandingPage from './components/ui/LandingPage/LandingPage.tsx'
 
 function App() {
 

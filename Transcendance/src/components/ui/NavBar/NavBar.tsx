@@ -1,4 +1,4 @@
-import logo from "../../assets/logo.svg";
+import logo from "../../../assets/logo.svg";
 import SearchBar from "./SearchBar.tsx";
 import { Button } from '@mui/material'
 import LoginButton from './LoginButton.tsx'
