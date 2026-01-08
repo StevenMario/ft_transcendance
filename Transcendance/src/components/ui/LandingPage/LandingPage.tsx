@@ -4,6 +4,7 @@ import HeroSection from "./HeroSection.tsx";
 import WhyUsSection from "./WhyUsSection";
 import WhatPeopleSaying from "./WhatPeopleSaying.tsx";
 import GetStartSection from "./GetStartSection.tsx";
+import Footer from "./Footer.tsx";
 
 function LandingPage() {
     return (<>
@@ -13,6 +14,7 @@ function LandingPage() {
         <HowItWorks/>
         <WhatPeopleSaying/>
         <GetStartSection/>
+        <Footer/>
     </>)
 }
 export default LandingPage
