@@ -2,7 +2,7 @@ import logo from "../../../assets/logo.svg";
 import SearchBar from "./SearchBar.tsx";
 import { Button } from '@mui/material'
 import LoginButton from './LoginButton.tsx'
-import SingInButton from "./SingInButton.tsx";
+import SingUpButton from "./SingUpButton.tsx";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
@@ -40,7 +40,7 @@ export default function NavBar() {
                 </ListItem>
 
                 <ListItem className="flex flex-col gap-2 mt-4">
-                    <SingInButton />
+                    <SingUpButton />
                     <LoginButton />
                 </ListItem>
             </List>
@@ -67,7 +67,7 @@ export default function NavBar() {
                 <Button color="inherit">
                     Services
                 </Button>
-                <SingInButton />
+                <SingUpButton />
                 <LoginButton />
             </nav>
             {/* Responsive md */}

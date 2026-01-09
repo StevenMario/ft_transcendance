@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-export default function SingInButton()
+export default function SingUpButton()
 {
 	return (
 		<Button 
@@ -10,10 +10,11 @@ export default function SingInButton()
 			 }}    
 			endIcon={<ArrowCircleRightIcon
 				sx={{ width: "30px",
-					height: "30px"
+					height: "30px",
+					color: "orange"
 				 }}
 			 />}>
-			Sing In
+			Sing Up
 		</Button>
 	);
 }
