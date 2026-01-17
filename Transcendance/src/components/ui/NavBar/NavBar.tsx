@@ -1,5 +1,4 @@
 import logo from "../../../assets/logo.svg";
-import SearchBar from "./SearchBar.tsx";
 import { Button } from '@mui/material'
 import LoginButton from './LoginButton.tsx'
 import SingUpButton from "./SingUpButton.tsx";
@@ -57,25 +56,30 @@ export default function NavBar() {
             {/* Responsive lg */}
             <nav className=" hidden max-w-7xl mx-auto px-4 py-4 lg:flex items-center justify-between">
                 <img className="w-20 sm:w-25 md:w-30" src={logo} alt="Logo" />
-                <SearchBar classValue="relative w-75"></SearchBar>
-                <Button color="inherit">
-                    Why us ?
-                </Button>
-                <Button color="inherit">
-                    Explore
-                </Button>
-                <Button color="inherit">
-                    Services
-                </Button>
-                <SingUpButton />
-                <LoginButton />
+                {/* <SearchBar classValue="relative w-75"></SearchBar> */}
+                <div>
+                    <Button color="inherit">
+                        Acceuil
+                    </Button>
+                    <Button color="inherit">
+                        Explorer
+                    </Button>
+                    <Button color="inherit">
+                        A propos
+                    </Button>
+                </div>
+                <div className="flex gap-5">
+                    <SingUpButton />
+                    <LoginButton />
+
+                </div>
             </nav>
             {/* Responsive md */}
             <nav className="max-w-7xl mx-auto px-4 py-4 flex lg:hidden items-center justify-between">
                 <img className="w-20" src={logo} alt="Logo" />
 
                 <IconButton onClick={() => toggleDrawer(true)}>
-                    <MenuIcon fontSize="large"/>
+                    <MenuIcon fontSize="large" />
                 </IconButton>
 
                 <Drawer
@@ -86,7 +90,7 @@ export default function NavBar() {
                 >
                     <div className="flex justify-end p-4">
                         <IconButton onClick={() => setOpen(false)}>
-                            <CloseIcon fontSize="large"/>
+                            <CloseIcon fontSize="large" />
                         </IconButton>
                     </div>
                     {drawerContent}

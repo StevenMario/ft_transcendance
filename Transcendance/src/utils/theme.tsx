@@ -11,7 +11,18 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: 'none',
+          '&:hover': {
+            backgroundColor: 'transparent',
+          },
+
+          '&:active': {
+            backgroundColor: 'transparent',
+          },
+
         },
+      },
+      defaultProps: {
+        disableRipple: true,
       },
     },
     MuiTab: {
