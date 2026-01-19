@@ -1,5 +1,4 @@
 import AccessService from "./AccessService.tsx";
-import HowItWorks from "./HowItWork.tsx";
 import HeroSection from "./HeroSection.tsx";
 import WhatPeopleSaying from "./WhatPeopleSaying.tsx";
 import GetStartSection from "./GetStartSection.tsx";
@@ -13,7 +12,6 @@ function LandingPage() {
         <ProblemsSection />
         <SolutionSection/>
         <AccessService/>
-        <HowItWorks/>
         <WhatPeopleSaying/>
         <GetStartSection/>
         <Footer/>
