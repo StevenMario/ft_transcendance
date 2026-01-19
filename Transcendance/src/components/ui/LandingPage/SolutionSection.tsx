@@ -44,7 +44,7 @@ export default function SolutionSection() {
                 </div>
 
                 {/* Features Grid - Aligned Interactive Cards */}
-                <div className="flex gap-6 items-stretch">
+                <div className="flex flex-col md:flex-row gap-6 md:items-stretch">
                     {features.map((feature, index) => {
                         const isActive = activeCard === index;
                         
@@ -53,11 +53,15 @@ export default function SolutionSection() {
                                 key={index}
                                 onClick={() => setActiveCard(index)}
                                 className={`
-                                    relative rounded-2xl cursor-pointer h-72
+                                    relative rounded-2xl cursor-pointer
                                     transition-all duration-500 ease-out
                                     ${isActive 
-                                        ? 'flex-1 shadow-2xl' 
-                                        : 'shrink-0 w-48 shadow-lg hover:shadow-xl'
+                                        ? 'md:flex-1 shadow-2xl' 
+                                        : 'md:shrink-0 md:w-48 shadow-lg hover:shadow-xl'
+                                    }
+                                    ${isActive 
+                                        ? 'h-96 md:h-72' 
+                                        : 'h-64 md:h-72'
                                     }
                                     ${feature.highlighted && isActive 
                                         ? feature.gradient 
@@ -70,7 +74,7 @@ export default function SolutionSection() {
                                 {/* Inner padding container */}
                                 <div className={`
                                     h-full flex flex-col transition-all duration-500
-                                    ${isActive ? 'p-8' : 'p-6 items-center mt-'}
+                                    ${isActive ? 'p-8' : 'p-6 md:items-center md:justify-center md:text-center'}
                                 `}>
                                     {/* Icon Container */}
                                     <div className={`
