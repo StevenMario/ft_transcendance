@@ -18,21 +18,17 @@ const HeroSection = () => {
     <section className=" pt-32 pb-20 md:pt-25 md:pb-30">
       <div className="container mx-auto text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 text-base md:text-lg font-medium text-red-700 mb-6">
-          <span className="text-red-500">Register</span>
-          <span className="text-gray-500">•</span>
-          <span className="text-amber-400">Local</span>
-          <span className="text-gray-500">•</span>
-          <span className="text-red-500">Freelance</span>
+        <div className="inline-flex items-center gap-2 text-xs font-semibold text-red-700 mb-6 px-4 py-2 shadow-inner shadow-slate-200 rounded-3xl border-[1.5px] border-white">
+          <span className="bg-linear-to-r from-[#EF485B] via-[#F39C12] to-[#F1C40F] text-transparent bg-clip-text">Register . Local . Fiable</span>
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text- leading-tight mb-6 max-w-4xl mx-auto">
+        <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text- leading-tight mb-6 max-w-4xl mx-auto">
           Trouvez le bon professionnel,au bon endroit, au bon moment
         </h1>
 
         {/* Subtitle */}
-        <p className="text-gray-500 text-base md:text-lg mb-10 max-w-xl mx-auto">
+        <p className="text-gray-500 text-sm md:text-md mb-10 max-w-xl mx-auto">
           Trouvez, contactez et collaborez avec les meilleurs prestataires, en quelques clics.
         </p>
 

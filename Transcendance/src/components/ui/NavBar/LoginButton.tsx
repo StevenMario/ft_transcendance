@@ -6,14 +6,15 @@ export default function LoginButton() {
       //   onClick={onClick}
       disableElevation
       sx={{
-         color: "#fff" ,
-        borderRadius: "12px",
+        color: "#fff" ,
+        borderRadius: "32px",
+        padding: "10px 24px",
+        fontSize: "16px",
+        fontWeight: 500,
+        lineHeight: "160%",
       }}
       className="
         normal-case
-        w-25
-        px-10
-        py-3
         text-lg
         font-medium
         bg-linear-to-r
@@ -21,7 +22,7 @@ export default function LoginButton() {
         to-pink-500
       "
     >
-      Login
+      Se connecter
     </Button>
   );
 }

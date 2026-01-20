@@ -21,24 +21,24 @@ export default function NavBar() {
         <div className="w-64">
             <List>
                 <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemText primary="Why us ?" />
+                    <ListItemButton className="flex justify-center">
+                        <ListItemText primary="Acceuil" sx={{ textAlign: 'center' }} />
                     </ListItemButton>
                 </ListItem>
 
                 <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemText primary="Explore" />
+                    <ListItemButton className="flex justify-center">
+                        <ListItemText primary="Explorer" sx={{ textAlign: 'center' }} />
                     </ListItemButton>
                 </ListItem>
 
                 <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemText primary="Services" />
+                    <ListItemButton className="flex justify-center">
+                        <ListItemText primary="A propos" sx={{ textAlign: 'center' }} />
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem className="flex flex-col gap-2 mt-4">
+                <ListItem className="flex  flex-col justify-between items-center">
                     <SingUpButton />
                     <LoginButton />
                 </ListItem>
@@ -54,10 +54,10 @@ export default function NavBar() {
     return (
         <>
             {/* Responsive lg */}
-            <nav className=" hidden max-w-7xl mx-auto px-4 py-4 lg:flex items-center justify-between">
+            <nav className="hidden lg:flex w-full max-w-[1440px] h-20 mx-auto px-4 items-center justify-between">
                 <img className="w-20 sm:w-25 md:w-30" src={logo} alt="Logo" />
                 {/* <SearchBar classValue="relative w-75"></SearchBar> */}
-                <div>
+                <div className="flex w-61.5 justify-between items-center">
                     <Button color="inherit">
                         Acceuil
                     </Button>
