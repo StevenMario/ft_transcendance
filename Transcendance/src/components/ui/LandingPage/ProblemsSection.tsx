@@ -47,8 +47,7 @@ const ProblemsSection = () => {
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="flex flex-col items-center text-center"
             >
               <div className={`w-16 h-16 rounded-2xl ${problem.bgColor} flex items-center justify-center mb-5`}>
                 <img
@@ -56,7 +55,13 @@ const ProblemsSection = () => {
                   alt={problem.title}
                   className="w-full h-full" />
               </div>
-              <h3 className="text-base md:text-lg font-semibold text-foreground mb-2">
+              <h3 className=" 
+                text-base
+                md:text-[24px]
+                font-semibold
+                text-foreground
+                mb-2
+                tracking-tight">
                 {problem.title}
               </h3>
               <p className="text-sm text-gray-700">

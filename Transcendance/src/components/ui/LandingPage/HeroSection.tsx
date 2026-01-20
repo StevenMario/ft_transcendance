@@ -1,5 +1,5 @@
-import { Search } from "lucide-react";
 import { Button } from '@mui/material'
+import SearchBar from './SearchBar';
 
 
 const HeroSection = () => {
@@ -23,8 +23,17 @@ const HeroSection = () => {
         </div>
 
         {/* Title */}
-        <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text- leading-tight mb-6 max-w-4xl mx-auto">
-          Trouvez le bon professionnel,au bon endroit, au bon moment
+        <h1 className="text-[40px]
+          md:text-[64px]
+          font-bold
+          text-center
+          leading-tight
+          tracking-[-2.56px]
+          max-w-4xl
+          mx-auto
+          mb-6">
+          Trouvez le bon professionnel
+          <span> au bon endroit, au bon moment</span>
         </h1>
 
         {/* Subtitle */}
@@ -45,33 +54,8 @@ const HeroSection = () => {
           })}
         </div>
 
-        {/* Search Bar */}
-        <div className="max-w-xl mx-auto">
-          <div className="flex items-center  rounded-full shadow-lg border border-amber-600 overflow-hidden">
-            <input
-              type="text"
-              placeholder="Rechercher des prestataires"
-              className="flex-1 px-6 py-4 text-sm md:text-base text-foreground placeholder:text-muted-foreground focus:outline-none bg-transparent"
-            />
-            <Button sx={{
-              backgroundColor: '#FF6F61',
-              color: '#FFFFFF',
-              borderRadius: '9999px',
-              margin: '6px',
-              padding: '12px 24px',
-              height: 'auto',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              '&:hover': {
-                backgroundColor: '#FF8A80',
-              },
-            }}>
-              <Search className="w-4 h-4" />
-              <span className="hidden sm:inline">Rechercher</span>
-            </Button>
-          </div>
-        </div>
+          {/*Search Bar */}
+          <SearchBar></SearchBar>
       </div>
     </section>
   );

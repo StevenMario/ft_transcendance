@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
 body {
@@ -21,21 +21,5 @@ body {
     );
   }
 
-  @keyframes bounce-in {
-    0% {
-      transform: scaleX(1);
-      opacity: 1;
-    }
-    50% {
-      transform: scaleX(1.05);
-    }
-    100% {
-      transform: scaleX(1);
-    }
-  }
-
-  .animate-bounce-in {
-    animation: bounce-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
 } 
  

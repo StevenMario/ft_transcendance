@@ -5,6 +5,7 @@ export default function LoginButton() {
     <Button
       //   onClick={onClick}
       disableElevation
+       disableRipple
       sx={{
         color: "#fff" ,
         borderRadius: "32px",
@@ -12,14 +13,13 @@ export default function LoginButton() {
         fontSize: "16px",
         fontWeight: 500,
         lineHeight: "160%",
+        backgroundColor: "#E64A22",
+        "&:hover": { backgroundColor: "#E64A22" }
       }}
       className="
         normal-case
         text-lg
         font-medium
-        bg-linear-to-r
-        from-orange-400
-        to-pink-500
       "
     >
       Se connecter

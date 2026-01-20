@@ -1,32 +1,24 @@
-import { useState } from 'react';
 import search from "../../../assets/search.svg";
 import business_message from "../../../assets/business_messages.svg";
 import secutity from "../../../assets/security.svg";
 
 export default function SolutionSection() {
-    const [activeCard, setActiveCard] = useState(0);
     
     const features = [
         {
             icon: search,
             title: "Recherche intelligente et locale",
             description: "Filtrez par métier, localisation et disponibilité, et accédez aux prestataires réellement proches de vous, sans perdre de temps.",
-            gradient: "card-pink-gradient",
-            highlighted: true,
         },
         {
             icon: business_message,
             title: "Contact direct et instantané",
             description: "Discutez directement avec les prestataires via une messagerie intégrée, sans intermédiaire.",
-            gradient: "bg-muted",
-            highlighted: false,
         },
         {
             icon: secutity,
             title: "Sécurité et simplicité",
             description: "Mikandra privilégie une expérience fluide, accessible sur mobile et ordinateur, sans complexité inutile.",
-            gradient: "bg-muted",
-            highlighted: false,
         },
     ];
 
@@ -43,85 +35,33 @@ export default function SolutionSection() {
                     </p>
                 </div>
 
-                {/* Features Grid - Aligned Interactive Cards */}
-                <div className="flex flex-col md:flex-row gap-6 md:items-stretch">
-                    {features.map((feature, index) => {
-                        const isActive = activeCard === index;
-                        
-                        return (
-                            <div
-                                key={index}
-                                onClick={() => setActiveCard(index)}
-                                className={`
-                                    relative rounded-2xl cursor-pointer
-                                    transition-all duration-500 ease-out
-                                    ${isActive 
-                                        ? 'md:flex-1 shadow-2xl' 
-                                        : 'md:shrink-0 md:w-48 shadow-lg hover:shadow-xl'
-                                    }
-                                    ${isActive 
-                                        ? 'h-96 md:h-72' 
-                                        : 'h-64 md:h-72'
-                                    }
-                                    ${feature.highlighted && isActive 
-                                        ? feature.gradient 
-                                        : isActive 
-                                            ? 'bg-card ' 
-                                            : 'bg-background hover:bg-card/30'
-                                    }
-                                `}
-                            >
-                                {/* Inner padding container */}
-                                <div className={`
-                                    h-full flex flex-col transition-all duration-500
-                                    ${isActive ? 'p-8' : 'p-6 md:items-center md:justify-center md:text-center'}
-                                `}>
-                                    {/* Icon Container */}
-                                    <div className={`
-                                        mb-4 transition-all duration-500 inline-block
-                                        ${isActive ? 'w-16 h-16' : 'w-12 h-12'}
-                                    `}>
-                                        <img 
-                                            src={feature.icon} 
-                                            alt={feature.title} 
-                                            className="w-full h-full object-contain"
-                                        />
-                                    </div>
-
-                                    {/* Title */}
-                                    <h3 className={`
-                                        font-semibold mb-3
-                                        transition-all duration-500
-                                        ${isActive ? 'text-lg md:text-xl' : 'text-base md:text-lg'}
-                                    `}>
-                                        {feature.title}
-                                    </h3>
-
-                                    {/* Description - Smooth Height Animation */}
-                                    <div className={`
-                                        flex-1 overflow-hidden transition-all duration-500
-                                        ${isActive 
-                                            ? 'opacity-100 visible' 
-                                            : 'opacity-0 invisible'
-                                        }
-                                    `}>
-                                        <p className="text-sm text-muted-foreground leading-relaxed">
-                                            {feature.description}
-                                        </p>
-                                    </div>
-
-                                    {/* Active Indicator Line */}
-                                    {isActive && (
-                                        <div className={`
-                                            absolute bottom-0 left-0 h-1 bg-gradient-to-r from-coral to-coral-light rounded-b-2xl
-                                            transition-all duration-500
-                                            w-full
-                                        `} />
-                                    )}
-                                </div>
+                {/* Features Grid - Simple Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {features.map((feature, index) => (
+                        <div
+                            key={index}
+                            className="bg-card rounded-2xl p-8 flex flex-col "
+                        >
+                            {/* Icon Container */}
+                            <div className="w-16 h-16 mb-4 inline-block">
+                                <img 
+                                    src={feature.icon} 
+                                    alt={feature.title} 
+                                    className="w-full h-full object-contain"
+                                />
                             </div>
-                        );
-                    })}
+
+                            {/* Title */}
+                            <h3 className="font-semibold text-lg md:text-xl mb-3">
+                                {feature.title}
+                            </h3>
+
+                            {/* Description */}
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                                {feature.description}
+                            </p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
