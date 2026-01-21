@@ -1,5 +1,6 @@
 import { Button } from '@mui/material'
 import SearchBar from './SearchBar';
+import { NeomorphContainer } from '../Utils/GradientText';
 
 
 const HeroSection = () => {
@@ -18,9 +19,7 @@ const HeroSection = () => {
     <section className=" pt-32 pb-20 md:pt-25 md:pb-30">
       <div className="container mx-auto text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 text-xs font-semibold text-red-700 mb-6 px-4 py-2 shadow-inner shadow-slate-200 rounded-3xl border-[1.5px] border-white">
-          <span className="bg-linear-to-r from-[#EF485B] via-[#F39C12] to-[#F1C40F] text-transparent bg-clip-text">Register . Local . Fiable</span>
-        </div>
+        <NeomorphContainer text="Register . Local . Fiable"  />
 
         {/* Title */}
         <h1 className="text-[40px]
@@ -55,7 +54,7 @@ const HeroSection = () => {
         </div>
 
           {/*Search Bar */}
-          <SearchBar></SearchBar>
+          <SearchBar />
       </div>
     </section>
   );

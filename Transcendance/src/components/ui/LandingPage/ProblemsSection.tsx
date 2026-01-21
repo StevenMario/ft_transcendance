@@ -34,26 +34,29 @@ const ProblemsSection = () => {
       <div className="container mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <p className="text-sm text-red-500 font-medium mb-4">
+          <p className="text-sm text-[#E64A22] font-medium mb-4">
             Mikandra simplifie la mise en relation.
           </p>
-          <h2 className="text-2xl md:text-4xl font-bold text-foreground leading-tight max-w-lg mx-auto">
-            Trouver un professionnel ne devrait pas être compliqué.
+          <h2 className="text-2xl md:text-[48px] font-bold text-foreground leading-tight mx-auto">
+            Trouver un professionnel ne<br />devrait pas être compliqué.
           </h2>
+          <p></p>
         </div>
 
         {/* Problems Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 px-20">
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center"
+              className="flex flex-col justify-baseline items-center text-center"
             >
-              <div className={`w-16 h-16 rounded-2xl ${problem.bgColor} flex items-center justify-center mb-5`}>
+              <div className={`rounded-2xl ${problem.bgColor} flex items-center justify-center mb-5`}>
                 <img
                   src={problem.icon}
                   alt={problem.title}
-                  className="w-full h-full" />
+                  width={100}
+                  height={100}
+                />
               </div>
               <h3 className=" 
                 text-base

@@ -14,30 +14,23 @@ import {
     ListItemText,
 } from "@mui/material";
 
+const listItemTexts = ["Accueil", "Explorer", "A propos"];
+
 export default function NavBar() {
 
     const [open, setOpen] = useState<boolean>(false);
     const drawerContent = (
         <div className="w-64">
             <List>
-                <ListItem disablePadding>
-                    <ListItemButton className="flex justify-center">
-                        <ListItemText primary="Acceuil" sx={{ textAlign: 'center' }} />
-                    </ListItemButton>
-                </ListItem>
-
-                <ListItem disablePadding>
-                    <ListItemButton className="flex justify-center">
-                        <ListItemText primary="Explorer" sx={{ textAlign: 'center' }} />
-                    </ListItemButton>
-                </ListItem>
-
-                <ListItem disablePadding>
-                    <ListItemButton className="flex justify-center">
-                        <ListItemText primary="A propos" sx={{ textAlign: 'center' }} />
-                    </ListItemButton>
-                </ListItem>
-
+                {listItemTexts.map(listItemText => {
+                    return (
+                        <ListItem>
+                            <ListItemButton className="flex justify-center">
+                                <ListItemText primary={listItemText} sx={{ textAlign: "center" }} />
+                            </ListItemButton>
+                        </ListItem>
+                    )
+                })}
                 <ListItem className="flex  flex-col justify-between items-center">
                     <SingUpButton />
                     <LoginButton />
@@ -54,24 +47,23 @@ export default function NavBar() {
     return (
         <>
             {/* Responsive lg */}
-            <nav className="hidden lg:flex w-full max-w-[1440px] h-20 mx-auto px-4 items-center justify-between">
+            <nav className="hidden lg:flex w-full max-w-360 h-20 mx-auto px-4 items-center justify-between">
                 <img className="w-20 sm:w-25 md:w-30" src={logo} alt="Logo" />
                 {/* <SearchBar classValue="relative w-75"></SearchBar> */}
                 <div className="flex w-61.5 justify-between items-center">
-                    <Button color="inherit">
-                        Acceuil
-                    </Button>
-                    <Button color="inherit">
-                        Explorer
-                    </Button>
-                    <Button color="inherit">
-                        A propos
-                    </Button>
+                    {listItemTexts.map(listItemText => {
+                        return (
+                            <ListItem>
+                                <ListItemButton className="flex justify-center">
+                                    <ListItemText className="w-max" primary={listItemText} sx={{ textAlign: "justify" }} />
+                                </ListItemButton>
+                            </ListItem>
+                        )
+                    })}
                 </div>
                 <div className="flex gap-5">
                     <SingUpButton />
                     <LoginButton />
-
                 </div>
             </nav>
             {/* Responsive md */}

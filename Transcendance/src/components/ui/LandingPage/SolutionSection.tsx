@@ -30,31 +30,34 @@ export default function SolutionSection() {
                     <h2 className="text-2xl md:text-4xl font-bold text-foreground leading-tight mb-4 max-w-2xl mx-auto">
                         Une solution simple pour connecter les bons services aux bons besoins
                     </h2>
-                    <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
+                    <p className=" text-sm md:text-base max-w-2xl mx-auto">
                         Mikandra est une plateforme pensée pour simplifier la recherche de services, valoriser les talents locaux et instaurer une relation de confiance entre tous les utilisateurs.
                     </p>
                 </div>
 
                 {/* Features Grid - Simple Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="flex justify-center flex-wrap gap-6">
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className="bg-card rounded-2xl p-8 flex flex-col "
+                            className="rounded-2xl max-h-100 p-8 flex flex-col shadow-xl shadow-[#e2e2e2] border-[0.5px] border-[#e2e2e299] w-full md:w-87.5 "
                         >
                             {/* Icon Container */}
-                            <div className="w-16 h-16 mb-4 inline-block">
+                            <div className="mb-4">
                                 <img 
                                     src={feature.icon} 
-                                    alt={feature.title} 
-                                    className="w-full h-full object-contain"
+                                    alt={feature.title}
+                                    width={index === 2 ? 32 : 40}
+                                    height={index === 2 ? 32 : 40}
                                 />
                             </div>
 
                             {/* Title */}
-                            <h3 className="font-semibold text-lg md:text-xl mb-3">
+                            <h3 className="font-semibold text-lg md:text-xl mb-4">
                                 {feature.title}
                             </h3>
+
+                            <hr className="mb-4 w-11.25 h-0.5" />
 
                             {/* Description */}
                             <p className="text-sm text-muted-foreground leading-relaxed">

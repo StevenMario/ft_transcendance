@@ -11,6 +11,7 @@ module.exports = {
         secondary: 'hsl(var(--secondary))',
         'secondary-foreground': 'hsl(var(--secondary-foreground))',
         // tu peux ajouter toutes tes variables ici
+        dadafara: "#E64A22",
       },
     },
   },
