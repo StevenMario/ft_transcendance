@@ -62,7 +62,6 @@ const ProblemsSection = () => {
                 text-base
                 md:text-[24px]
                 font-semibold
-                text-foreground
                 mb-2
                 tracking-tight">
                 {problem.title}
