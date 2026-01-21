@@ -57,7 +57,7 @@ export default function SolutionSection() {
                                 {feature.title}
                             </h3>
 
-                            <hr className="mb-4 w-11.25 h-0.5" />
+                            <hr className="mb-4 w-14 h-0.5 rounded text-transparent bg-[#E64A22]" />
 
                             {/* Description */}
                             <p className="text-sm text-muted-foreground leading-relaxed">
