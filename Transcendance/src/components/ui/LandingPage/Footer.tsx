@@ -5,7 +5,7 @@ import SingUpButton from "../NavBar/SingUpButton";
 
 const Footer = () => {
   return (
-    <footer className="py-8 md:py-12 bg-background border-t border-border">
+    <footer className="py-8 md:py-12 bg-background border-border">
       <div className="container">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Social */}

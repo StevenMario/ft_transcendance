@@ -29,36 +29,32 @@ function AccessService() {
   ];
 
   return (
-    <section className="py-12 md:py-20">
+    <section className="py-12 md:py-20 px-0 md:px-20">
       <div className="container mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <NeomorphContainer text="Decouvrez les services en ligne" />
 
-          <h2 className="text-[40px] md:text-[64px] font-bold text-foreground leading-tight mb-4  mx-auto">
+          <h2 className="text-[40px] md:text-[64px] font-bold text-foreground leading-tight mx-auto">
             Vous cherchez un service ?
           </h2>
-          <p className=" text-sm md:text-[16px]  mx-auto">
-            Mikandra vous aide à trouver rapidement un prestataire fiable, adapté à votre besoin et proche de chez vous.,<br />
-            Plus besoin de multiplier les appels ou les recommandations incertaines : tout est centralisé au même endroit.
-          </p>
         </div>
         {/* per service */}
-        <div className="flex flex-col md:flex-row px-20 mb-10 gap-5">
+        <div className="flex flex-col md:flex-row px-5 md:px-20 mb-10 gap-5 justify-center">
           {
             servicesPer.map((service, index) => (
-              <div key={index} className="flex max-h-100 items-start flex-1 flex-col w-full gap-4 md:gap-6 justify-center">
-                <div className="flex justify-start items-center gap-4">
+              <div key={index} className="w-full">
+                <div className="flex flex-col md:flex-row justify-center md:justify-start items-center gap-4 mb-5">
                   <img
                     src={service.icone}
                     alt={service.title}
                     width={index === 0 ? 43.48 : 48.684}
                     height={index === 0 ? 53.648 : 48.813}
                   />
-                  <h3 className="text-[24px] md:text-[27px] tracking-tight font-semibold text-left">
+                  <h3 className="text-[24px] md:text-[27px] tracking-tight font-semibold text-center md:text-left">
                     {service.title}
                   </h3>
                 </div>
-                <p className="text-[16px]  text-left text-gray-500 max-w-md">
+                <p className="text-sm text-center md:text-left text-gray-500">
                   {service.description}
                 </p>
               </div>
