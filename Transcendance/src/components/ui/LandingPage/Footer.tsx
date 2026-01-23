@@ -2,6 +2,7 @@ import { Linkedin, Facebook, Twitter } from "lucide-react";
 import { Button } from "@mui/material";
 import logo from "../../../assets/logo.svg";
 import SingUpButton from "../NavBar/SingUpButton";
+import LoginButton from "../NavBar/LoginButton";
 
 const Footer = () => {
   return (
@@ -14,7 +15,7 @@ const Footer = () => {
               <img className="w-30" src={logo} alt="Logo" />
             </div>
             <p className="text-sm text-gray-500 mb-4">
-              Connecting clients with the best local professionals.
+              Mettre en relation les clients avec les meilleurs professionnels locaux.
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-400 hover:bg-orange-600 hover:text-white transition-all">
@@ -40,30 +41,17 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Site Map</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-gray-500 hover:text-amber-500 transition-colors">Why us?</a></li>
-              <li><a href="#" className="text-sm text-gray-500 hover:text-amber-500 transition-colors">Explore</a></li>
-              <li><a href="#" className="text-sm text-gray-500 hover:text-amber-500 transition-colors">Services</a></li>
-              <li><a href="#" className="text-sm text-gray-500 hover:text-amber-500 transition-colors">How it works</a></li>
+              <li><a href="#" className="text-sm text-gray-500 hover:text-amber-500 transition-colors">Accueil?</a></li>
+              <li><a href="#" className="text-sm text-gray-500 hover:text-amber-500 transition-colors">Explorer</a></li>
+              <li><a href="#" className="text-sm text-gray-500 hover:text-amber-500 transition-colors">A propos</a></li>
+              
             </ul>
           </div>
 
           {/* Auth */}
           <div>
             <div className="flex flex-col gap-3">
-              <Button variant="contained"
-                sx={{
-                  px: 4,
-                  py: 1,
-                  borderRadius: '1.5rem',
-                  color: 'white',
-                  background: 'linear-gradient(135deg, rgba(255,149,0,1), rgba(255,77,166,1))',
-                  transition: 'background 300ms ease, transform 300ms ease',
-                  '&:hover': {
-                    transform: 'scale(1.05)',
-                  },
-                }}>
-                Login
-              </Button>
+              <LoginButton/>
               <SingUpButton />
 
             </div>
