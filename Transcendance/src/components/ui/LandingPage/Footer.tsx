@@ -1,8 +1,7 @@
 import { Linkedin, Facebook, Twitter } from "lucide-react";
-import { Button } from "@mui/material";
 import logo from "../../../assets/logo.svg";
 import SingUpButton from "../NavBar/SingUpButton";
-import LoginButton from "../NavBar/LoginButton";
+import PrimaryButton from "../NavBar/PrimaryButton.tsx";
 
 const Footer = () => {
   return (
@@ -51,7 +50,7 @@ const Footer = () => {
           {/* Auth */}
           <div>
             <div className="flex flex-col gap-3">
-              <LoginButton/>
+              <PrimaryButton name="Se connecter" />
               <SingUpButton />
 
             </div>

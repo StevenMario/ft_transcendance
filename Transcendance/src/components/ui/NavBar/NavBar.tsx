@@ -1,6 +1,5 @@
 import logo from "../../../assets/logo.svg";
-import { Button } from '@mui/material'
-import LoginButton from './LoginButton.tsx'
+import PrimaryButton from './PrimaryButton.tsx'
 import SingUpButton from "./SingUpButton.tsx";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
@@ -37,7 +36,7 @@ export default function NavBar({ hide = false }: NavBarProps) {
                 })}
                 <ListItem className="flex  flex-col justify-between items-center">
                     <SingUpButton />
-                    <LoginButton />
+                    <PrimaryButton name="Se Conecter" />
                 </ListItem>
             </List>
         </div>
@@ -69,7 +68,7 @@ export default function NavBar({ hide = false }: NavBarProps) {
                         </div>
                         <div className="flex gap-5">
                             <SingUpButton />
-                            <LoginButton />
+                            <PrimaryButton name="Se Connecter" />
                         </div>
                     </>
                 )}
