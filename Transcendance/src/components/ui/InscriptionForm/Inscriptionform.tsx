@@ -1,7 +1,9 @@
+import NavBar from "../NavBar/NavBar";
+
 export default function InscriptionForm() {
     return (
-        <div>
-            <h1>Inscription Form</h1>
-        </div>
+        <section >
+            <NavBar hide={true}/>
+        </section>
     )
 }

@@ -14,9 +14,13 @@ import {
     ListItemText,
 } from "@mui/material";
 
+interface NavBarProps { 
+    hide?: boolean;
+}
+
 const listItemTexts = ["Accueil", "Explorer", "A propos"];
 
-export default function NavBar() {
+export default function NavBar({ hide = false }: NavBarProps) {
 
     const [open, setOpen] = useState<boolean>(false);
     const drawerContent = (
@@ -49,44 +53,52 @@ export default function NavBar() {
             {/* Responsive lg */}
             <nav className="hidden lg:flex w-full max-w-360 h-20 mx-auto px-4 items-center justify-between">
                 <img className="w-20 sm:w-25 md:w-30" src={logo} alt="Logo" />
-                {/* <SearchBar classValue="relative w-75"></SearchBar> */}
-                <div className="flex w-61.5 justify-between items-center">
-                    {listItemTexts.map(listItemText => {
-                        return (
-                            <ListItem>
-                                <ListItemButton className="flex justify-center">
-                                    <ListItemText className="w-max" primary={listItemText} sx={{ textAlign: "justify" }} />
-                                </ListItemButton>
-                            </ListItem>
-                        )
-                    })}
-                </div>
-                <div className="flex gap-5">
-                    <SingUpButton />
-                    <LoginButton />
-                </div>
+                {!hide && (
+                    <>
+                        {/* <SearchBar classValue="relative w-75"></SearchBar> */}
+                        <div className="flex w-61.5 justify-between items-center">
+                            {listItemTexts.map(listItemText => {
+                                return (
+                                    <ListItem>
+                                        <ListItemButton className="flex justify-center">
+                                            <ListItemText className="w-max" primary={listItemText} sx={{ textAlign: "justify" }} />
+                                        </ListItemButton>
+                                    </ListItem>
+                                )
+                            })}
+                        </div>
+                        <div className="flex gap-5">
+                            <SingUpButton />
+                            <LoginButton />
+                        </div>
+                    </>
+                )}
             </nav>
             {/* Responsive md */}
             <nav className="max-w-7xl mx-auto px-4 py-4 flex lg:hidden items-center justify-between">
                 <img className="w-20" src={logo} alt="Logo" />
 
-                <IconButton onClick={() => toggleDrawer(true)}>
-                    <MenuIcon fontSize="large" />
-                </IconButton>
-
-                <Drawer
-                    className="lg:hidden"
-                    anchor="right"
-                    open={open}
-                    onClose={() => toggleDrawer(false)}
-                >
-                    <div className="flex justify-end p-4">
-                        <IconButton onClick={() => setOpen(false)}>
-                            <CloseIcon fontSize="large" />
+                {!hide && (
+                    <>
+                        <IconButton onClick={() => toggleDrawer(true)}>
+                            <MenuIcon fontSize="large" />
                         </IconButton>
-                    </div>
-                    {drawerContent}
-                </Drawer>
+
+                        <Drawer
+                            className="lg:hidden"
+                            anchor="right"
+                            open={open}
+                            onClose={() => toggleDrawer(false)}
+                        >
+                            <div className="flex justify-end p-4">
+                                <IconButton onClick={() => setOpen(false)}>
+                                    <CloseIcon fontSize="large" />
+                                </IconButton>
+                            </div>
+                            {drawerContent}
+                        </Drawer>
+                    </>
+                )}
             </nav>
         </>
     );
