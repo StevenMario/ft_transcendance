@@ -1,7 +1,7 @@
 import { Linkedin, Facebook, Twitter } from "lucide-react";
 import logo from "../../../assets/logo.svg";
-import SingUpButton from "../NavBar/SingUpButton";
-import PrimaryButton from "../NavBar/PrimaryButton.tsx";
+import SingUpButton from "../Button/SingUpButton.tsx";
+import PrimaryButton from "../Button/PrimaryButton.tsx";
 
 const Footer = () => {
   return (
