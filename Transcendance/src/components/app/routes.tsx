@@ -2,8 +2,9 @@ import {
   createBrowserRouter,
 } from 'react-router-dom'
 import App from '../../App'
-import InscriptionForm from '../ui/InscriptionForm/Inscriptionform.tsx'
+import StepAccount from '../ui/InscriptionForm/StepAccount.tsx'
 import ConfirmEmailForm from '../ui/InscriptionForm/ConfirmEmail.tsx'
+import SignUpLayout from '../ui/InscriptionForm/SignUpLayout.tsx'
 
 const router = createBrowserRouter([
   {
@@ -12,8 +13,12 @@ const router = createBrowserRouter([
   },
   {
     path: '/singup',
-    element: <InscriptionForm />,
+    element: <SignUpLayout />,
     children: [
+      {
+        index: true,
+        element: <StepAccount/>,
+      },
       {
         path: 'confirm-email',
         element: <ConfirmEmailForm/>,

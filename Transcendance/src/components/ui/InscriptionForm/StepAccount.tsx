@@ -28,23 +28,8 @@ export default function InscriptionForm() {
         }
     ]
     return (
-        <section className="relative min-h-screen overflow-hidden px-5">
-            {/* Logo Red Blur - Bottom Left */}
-            <img
-                src={LogoRedBlur}
-                alt="Logo Red Blur"
-                className="absolute bottom-0 left-0 pointer-events-none lg:w-auto lg:h-auto w-1/3 h-1/3 -z-10"
-            />
-            {/* Logo Yellow Blur - Top Right */}
-            <img
-                src={LogoYellowBlur}
-                alt="Logo Yellow Blur"
-                className="absolute top-0 right-0 pointer-events-none lg:w-auto lg:h-auto w-1/3 h-1/3 -z-10"
-            />
-            {/* Content */}
             <div className="relative z-10">
-                <NavBar hide={true} />
-                <div className="flex justify-center items-center min-h-screen py-8 sm:py-12">
+                <div className="flex justify-center items-center min-h-screen ">
                     <div className="
                     flex 
                     flex-col 
@@ -115,6 +100,5 @@ export default function InscriptionForm() {
 
                 </div>
             </div>
-        </section>
     )
 }
