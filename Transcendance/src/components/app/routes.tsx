@@ -2,7 +2,8 @@ import {
   createBrowserRouter,
 } from 'react-router-dom'
 import App from '../../App'
-import InscriptionForm from '../ui/InscriptionForm/Inscriptionform'
+import InscriptionForm from '../ui/InscriptionForm/Inscriptionform.tsx'
+import ConfirmEmailForm from '../ui/InscriptionForm/ConfirmEmail.tsx'
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,12 @@ const router = createBrowserRouter([
   {
     path: '/singup',
     element: <InscriptionForm />,
+    children: [
+      {
+        path: 'confirm-email',
+        element: <ConfirmEmailForm/>,
+      }
+    ],
   }
 ])
 

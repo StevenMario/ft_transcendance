@@ -57,13 +57,13 @@ export default function InscriptionForm() {
                     items-center 
                     w-full
                     sm:w-[90%]
-                    md:w-[478px]
+                    md:w-119.5
                     px-4
                     sm:px-5.5
                     py-6
                     sm:py-8
                     backdrop-blur-[250px]
-                    max-w-[478px]">
+                    max-w-119.5">
                         <form
                             className="flex flex-col w-full h-full gap-4 "
                             action="">
@@ -89,7 +89,7 @@ export default function InscriptionForm() {
                             <div className="mt-3.75 flex justify-center"
                                 style={{ fontSize: 'clamp(14px, 2vw, 20px)' }}>
 
-                                <PrimaryButton px="40px" fontSize="clamp(14px, 2vw, 20px)" classButton="px-4 sm:px-6" name="Accepter et s'inscrire" />
+                                <PrimaryButton px="40px" fontSize="clamp(14px, 2vw, 20px)" classButton="px-4 sm:px-6" name="Accepter et s'inscrire" path="/singup/confirm-email" />
                             </div>
                         </form>
                         <div className="flex flex-row w-full justify-center items-center mt-4 gap-2">

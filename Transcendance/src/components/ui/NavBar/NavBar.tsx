@@ -1,6 +1,6 @@
 import logo from "../../../assets/logo.svg";
 import PrimaryButton from '../Button/PrimaryButton.tsx'
-import SingUpButton from "../Button/SingUpButton.tsx";
+import SingUpButton from "./SingUpButton.tsx";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
