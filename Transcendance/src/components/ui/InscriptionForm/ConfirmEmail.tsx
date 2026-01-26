@@ -1,8 +1,8 @@
 function ConfirmEmailForm() {
   return (
     <div className="relative z-10">
-                <div className="flex justify-center items-center min-h-screen py-8 sm:py-12">
-                    <div className="
+      <div className="flex justify-center items-center min-h-screen py-8 sm:py-12">
+        <div className="
                     flex 
                     flex-col 
                     rounded-2xl
@@ -22,12 +22,21 @@ function ConfirmEmailForm() {
                     sm:py-8
                     backdrop-blur-[250px]
                     max-w-119.5">
-                        
-                       <p>Confirme ton e-mail</p>
-                    </div>
 
-                </div>
-            </div>
+          <div>
+            <h1 className=" font-semibold leading-normal tracking-[-0.32px] text-[32px] text-[#333] ">Confirme ton e-mail</h1>
+            <p className="text-[14px] leading-[24px] text-[#B3B3B3]">
+              Code envoyé à
+              <span className="text-[#8C8C8C]"> prenom@email.com · </span>
+              <a href="#" className="text-[#4D4D4D] font-semibold">
+                Modifier le mail
+              </a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
   );
 }
 

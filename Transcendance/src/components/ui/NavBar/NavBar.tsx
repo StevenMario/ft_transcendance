@@ -13,7 +13,7 @@ import {
     ListItemText,
 } from "@mui/material";
 
-interface NavBarProps { 
+interface NavBarProps {
     hide?: boolean;
 }
 
@@ -36,7 +36,9 @@ export default function NavBar({ hide = false }: NavBarProps) {
                 })}
                 <ListItem className="flex  flex-col justify-between items-center">
                     <SingUpButton />
-                    <PrimaryButton name="Se Conecter" />
+                    <div className="mt-3">
+                        <PrimaryButton name="Se Conecter" />
+                    </div>
                 </ListItem>
             </List>
         </div>
