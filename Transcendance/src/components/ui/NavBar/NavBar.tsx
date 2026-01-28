@@ -74,6 +74,13 @@ export default function NavBar({ hide = false }: NavBarProps) {
                         </div>
                     </>
                 )}
+                {
+                    hide && (
+                        <p className="mt-3 text-xs sm:text-sm md:text-[16px] font-bold leading-[160%]">
+                            Déjà inscrit(e) ? <a href="#" className="text-[#E64A22]">S'identifier</a>
+                        </p>
+                    )
+                }
             </nav>
             {/* Responsive md */}
             <nav className="max-w-7xl mx-auto px-4 py-4 flex lg:hidden items-center justify-between">
@@ -100,6 +107,13 @@ export default function NavBar({ hide = false }: NavBarProps) {
                         </Drawer>
                     </>
                 )}
+                {
+                    hide && (
+                        <p className=" text-xs sm:text-sm md:text-[16px] font-bold leading-[160%]">
+                            Déjà inscrit(e) ? <a href="#" className="text-[#E64A22]">S'identifier</a>
+                        </p>
+                    )
+                }
             </nav>
         </>
     );

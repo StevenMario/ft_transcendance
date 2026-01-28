@@ -1,7 +1,6 @@
 function ConfirmEmailForm() {
   return (
-    <div className="relative z-10">
-      <div className="flex justify-center items-center min-h-screen py-8 sm:py-12">
+    
         <div className="
                     flex 
                     flex-col 
@@ -34,9 +33,6 @@ function ConfirmEmailForm() {
             </p>
           </div>
         </div>
-
-      </div>
-    </div>
   );
 }
 
