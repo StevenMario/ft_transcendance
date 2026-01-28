@@ -3,8 +3,9 @@ import {
 } from 'react-router-dom'
 import App from '../../App'
 import StepAccount from '../ui/InscriptionForm/StepAccount.tsx'
-import ConfirmEmailForm from '../ui/InscriptionForm/ConfirmEmail.tsx'
+import RoleChoice from '../ui/InscriptionForm/RoleChoice.tsx'
 import SignUpLayout from '../ui/InscriptionForm/SignUpLayout.tsx'
+import CompleteProfile from '../ui/InscriptionForm/CompleteProfile.tsx'
 
 const router = createBrowserRouter([
   {
@@ -20,8 +21,12 @@ const router = createBrowserRouter([
         element: <StepAccount/>,
       },
       {
-        path: 'confirm-email',
-        element: <ConfirmEmailForm/>,
+        path: 'role-choice',
+        element: <RoleChoice/>,
+      },
+      {
+        path: 'complete-profile',
+        element: <CompleteProfile />,
       }
     ],
   }

@@ -52,7 +52,7 @@ export default function NavBar({ hide = false }: NavBarProps) {
     return (
         <>
             {/* Responsive lg */}
-            <nav className="hidden lg:flex w-full max-w-360 h-20 mx-auto px-4 items-center justify-between">
+            <nav className="hidden z-50 lg:flex w-full max-w-360 h-20 mx-auto px-4 items-center justify-between">
                 <img className="w-20 sm:w-25 md:w-30" src={logo} alt="Logo" />
                 {!hide && (
                     <>
@@ -83,7 +83,7 @@ export default function NavBar({ hide = false }: NavBarProps) {
                 }
             </nav>
             {/* Responsive md */}
-            <nav className="max-w-7xl mx-auto px-4 py-4 flex lg:hidden items-center justify-between">
+            <nav className="max-w-7xl z-50 mx-auto px-4 py-4 flex lg:hidden items-center justify-between">
                 <img className="w-20" src={logo} alt="Logo" />
 
                 {!hide && (
