@@ -62,7 +62,7 @@ function CompleteProfile() {
                 </div>
             <div className="mt-5 flex flex-row justify-center gap-4 ">
                 <SecondaryButton name="Retour" />
-                <PrimaryButton name="Suivant" path="" />
+                <PrimaryButton name="Suivant" path="/singup/finish-profile" />
             </div>
             </form>
             

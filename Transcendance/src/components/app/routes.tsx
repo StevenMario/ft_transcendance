@@ -6,6 +6,7 @@ import StepAccount from '../ui/InscriptionForm/StepAccount.tsx'
 import RoleChoice from '../ui/InscriptionForm/RoleChoice.tsx'
 import SignUpLayout from '../ui/InscriptionForm/SignUpLayout.tsx'
 import CompleteProfile from '../ui/InscriptionForm/CompleteProfile.tsx'
+import FinishProfile from '../ui/InscriptionForm/FinishProfile.tsx'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: 'complete-profile',
         element: <CompleteProfile />,
+      },
+      {
+        path: 'finish-profile',
+        element: <FinishProfile />,
       }
     ],
   }
