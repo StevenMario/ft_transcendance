@@ -25,9 +25,9 @@ export default function NavBar({ hide = false }: NavBarProps) {
     const drawerContent = (
         <div className="w-64">
             <List>
-                {listItemTexts.map(listItemText => {
+                {listItemTexts.map((listItemText, index) => {
                     return (
-                        <ListItem>
+                        <ListItem key={index}>
                             <ListItemButton className="flex justify-center">
                                 <ListItemText primary={listItemText} sx={{ textAlign: "center" }} />
                             </ListItemButton>
@@ -58,9 +58,9 @@ export default function NavBar({ hide = false }: NavBarProps) {
                     <>
                         {/* <SearchBar classValue="relative w-75"></SearchBar> */}
                         <div className="flex w-61.5 justify-between items-center">
-                            {listItemTexts.map(listItemText => {
+                            {listItemTexts.map((listItemText, index) => {
                                 return (
-                                    <ListItem>
+                                    <ListItem key={index}>
                                         <ListItemButton className="flex justify-center">
                                             <ListItemText className="w-max" primary={listItemText} sx={{ textAlign: "justify" }} />
                                         </ListItemButton>

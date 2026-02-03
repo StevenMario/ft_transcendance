@@ -2,7 +2,7 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
 interface PrimaryButtonProps {
-  // onClick?: () => void;
+  onClick?: () => void;
   name: string;
   classButton?: string;
   px?: string;
@@ -13,9 +13,10 @@ interface PrimaryButtonProps {
 export default function PrimaryButton(props: PrimaryButtonProps) {
   return (
     <Button
-      //   onClick={onClick}
-      component={Link}
-      to={props.path || "#"}
+      {...(props.onClick
+        ? { onClick: props.onClick }
+        : { component: Link, to: props.path || "#" })
+      }
       disableElevation
       disableRipple
       sx={{
