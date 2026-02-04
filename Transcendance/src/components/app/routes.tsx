@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: '/singup',
+    path: '/signup',
     element: <SignUpLayout />,
     children: [
       {

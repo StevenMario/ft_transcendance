@@ -7,18 +7,18 @@ interface PrimaryButtonProps {
   classButton?: string;
   px?: string;
   fontSize?: string;
+  type?: "button" | "submit" | "reset";
   path?: string;
 }
 
 export default function PrimaryButton(props: PrimaryButtonProps) {
   return (
     <Button
-      {...(props.onClick
-        ? { onClick: props.onClick }
-        : { component: Link, to: props.path || "#" })
-      }
+      {...(props.onClick && { onClick: props.onClick })}
+      {...(props.path && !props.onClick && { component: Link, to: props.path })}
       disableElevation
       disableRipple
+      type={props.type || "submit"}
       sx={{
         color: "#fff",
         borderRadius: "32px",

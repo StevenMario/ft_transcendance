@@ -6,7 +6,7 @@ export default function SingUpButton() {
 	return (
 		<Button
 			component={Link}
-			to='/singup'
+			to='/signup'
 			sx={{
 				color: "#333333",
 				fontSize: "1rem",

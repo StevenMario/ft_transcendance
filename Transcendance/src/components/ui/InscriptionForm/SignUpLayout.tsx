@@ -5,7 +5,7 @@ function SignUpLayout() {
         <section className="relative h-max  overflow-hidden px-5  ">
             {/* Content */}
             <NavBar hide={true} />
-            <div className="relative md:-mt-[30px] ">
+            <div className="relative md:-mt-7.5 ">
                 <div className="flex justify-center items-center min-h-screen ">
                     <div className="
                         flex 

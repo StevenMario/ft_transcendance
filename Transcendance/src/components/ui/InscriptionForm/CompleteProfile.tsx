@@ -33,7 +33,7 @@ function CompleteProfile() {
         }
     ]
     return (
-        <div className="w-full px-[20px]">
+        <div className="w-full px-5">
 
             <form
                 className="flex flex-col w-full gap-4"
