@@ -72,13 +72,12 @@ export default function InscriptionForm() {
                                                 onChange={(e) => setPassword(e.target.value)}
                                                 required />
                                             <p
-                                                className={`text-sm font-semibold ${
-                                                    security === "Faible"
+                                                className={`text-sm font-semibold ${security === "Faible"
                                                         ? "text-red-500"
                                                         : security === "Moyen"
                                                             ? "text-gray-500"
                                                             : "text-green-500"
-                                                }`}
+                                                    }`}
                                             >
                                                 {security}
                                             </p>
@@ -116,23 +115,21 @@ export default function InscriptionForm() {
                                                 id={input.id}
                                                 name={input.name}
                                                 placeholder={input.placeholder}
-                                                onChange={(e) => {
-                                                    if (!e.target.value) {
-                                                        console.log("Please fill out this field");
-                                                        e.target.setCustomValidity("Veuillez remplir ce champ");
+                                                onInvalid={(e) => {
+                                                    if (e.currentTarget.value.trim() === "") {
+                                                        e.currentTarget.setCustomValidity("Veuillez remplir ce champ");
+                                                    }
+                                                }}
+                                                onInput={(e) => {
+                                                    if (e.currentTarget.value.trim() !== "") {
+                                                        e.currentTarget.setCustomValidity("");
                                                     }
                                                 }}
                                                 required
                                             />
                                         )
                                 }
-                                {/* <input
-                                    className="focus:border-[#e54922be] placeholder:text-[10px] sm:placeholder:text-[12px] placeholder:text-gray-400 focus:outline-none rounded-xl bg-[rgba(13,12,12,0.05)] border border-[rgba(255,255,255,0)] py-2 px-3 h-9 sm:h-10 text-sm sm:text-base"
-                                    type={input.type}
-                                    id={input.id}
-                                    name={input.name}
-                                    placeholder={input.placeholder}
-                                /> */}
+
                             </div >
                         ))
                     }
