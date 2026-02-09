@@ -13,7 +13,7 @@ function RoleChoice() {
     // Logic to handle role change can be added here
     if (!role)
       return;
-    navigate("/singup/complete-profile/" + role);
+    navigate("/signup/complete-profile/" + role);
 
   }
 
@@ -33,7 +33,7 @@ function RoleChoice() {
         </RadioGroup>
         <div className="mt-3 flex flex-row justify-center gap-4">
           <SecondaryButton name="Retour" />
-          <PrimaryButton name="Suivant" onClick={handleChange} />
+          <PrimaryButton name="Suivant" onClick={handleChange} type="button"/>
         </div>
       </div>
     </div>

@@ -1,5 +1,8 @@
-function EntrepriseLayout()
-{
-    return <div>Entreprise Layout</div>
+import { Outlet } from "react-router";
+
+function EntrepriseLayout() {
+    return <div>
+        <Outlet></Outlet>
+    </div>
 }
 export default EntrepriseLayout;
