@@ -1,162 +1,116 @@
-import PrimaryButton from "../Button/PrimaryButton";
 import SecondaryButton from "../Button/SecondaryButton";
 import GoogleIcone from "../../../assets/icons/material-icon-theme_google.svg";
 import { useNavigate } from "react-router-dom";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { passwordStrength } from "./PasswordUtils";
+import { useForm, useWatch } from "react-hook-form";
+import type { SubmitHandler } from "react-hook-form";
+
+type InscriptionFormInputs = {
+  email: string;
+  password: string;
+  confirmPassword: string;
+};
+
 export default function InscriptionForm() {
-    const [password, setPassword] = useState<string>('');
-    const [confirmPassword, setConfirmPassword] = useState<string>('');
-    const security = useMemo(() => {
-        return passwordStrength(password);
-    }, [password]);
-    const navigate = useNavigate();
-    const inscrpitionForm = [
-        {
-            label: "Email",
-            type: "email",
-            id: "email",
-            name: "email",
-            placeholder: "exemple@email.com"
-        },
-        {
-            label: "Mot de passe",
-            type: "password",
-            id: "password",
-            name: "password",
-            placeholder: "Votre mot de passe"
-        },
-        {
-            label: "Confirmer le mot de passe",
-            type: "password",
-            id: "confirmPassword",
-            name: "confirmPassword",
-            placeholder: "Confirmez votre mot de passe"
-        }
-    ]
+  const {
+    control,
+    register,
+    handleSubmit,
+  } = useForm<InscriptionFormInputs>();
+  const password = useWatch({ control, name: "password", defaultValue: "" });
+  const confirmPassword = useWatch({ control, name: "confirmPassword", defaultValue: "" });
+  const security = useMemo(() => {
+    return passwordStrength(password);
+  }, [password]);
+  const navigate = useNavigate();
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        console.log("Form submitted");
-        // Handle form submission logic here
-        navigate('/signup/role-choice');
-    }
-    return (
-        <div>
 
-            <form
-                onSubmit={handleSubmit}
-                className="flex flex-col w-full h-full gap-4"
-                action="">
-                <div className="flex flex-col w-full h-full gap-4">
-                    <h1 className="text-[#333] tracking-[-0.32px]  text-[32px] font-bold leading-[130%]">
-                        Créer un compte
-                    </h1>
-                    {
-                        inscrpitionForm.map((input, index) => (
-                            <div className="flex flex-col gap-2" key={index}>
-                                <label
-                                    className="text-sm sm:text-base md:text-[20px] self-stretch tracking-[0px] text-[#333] not-italic font-bold leading-[160%]"
-                                    htmlFor={input.id}>{input.label}
-                                </label>
-                                {
-                                    input.id === 'password' ? (
-                                        <>
-                                            <input
-                                                className="focus:border-[#e54922be] placeholder:text-[10px] sm:placeholder:text-[12px] placeholder:text-gray-400 focus:outline-none rounded-xl bg-[rgba(13,12,12,0.05)] border border-[rgba(255,255,255,0)] py-2 px-3 h-9 sm:h-10 text-sm sm:text-base"
-                                                type={input.type}
-                                                id={input.id}
-                                                name={input.name}
-                                                value={password}
-                                                placeholder={input.placeholder}
-                                                onChange={(e) => setPassword(e.target.value)}
-                                                required />
-                                            <p
-                                                className={`text-sm font-semibold ${security === "Faible"
-                                                        ? "text-red-500"
-                                                        : security === "Moyen"
-                                                            ? "text-gray-500"
-                                                            : "text-green-500"
-                                                    }`}
-                                            >
-                                                {security}
-                                            </p>
-                                        </>
-                                    )
-                                        : input.id === 'confirmPassword' ? (
-                                            <>
-                                                <input
-                                                    className="focus:border-[#e54922be] placeholder:text-[10px] sm:placeholder:text-[12px] placeholder:text-gray-400 focus:outline-none rounded-xl bg-[rgba(13,12,12,0.05)] border border-[rgba(255,255,255,0)] py-2 px-3 h-9 sm:h-10 text-sm sm:text-base"
-                                                    type={input.type}
-                                                    id={input.id}
-                                                    name={input.name}
-                                                    placeholder={input.placeholder}
-                                                    value={confirmPassword}
-                                                    onChange={(e) => {
-                                                        setConfirmPassword(e.target.value);
-                                                        if (e.target.value !== password) {
-                                                            e.target.setCustomValidity("Les mots de passe ne correspondent pas");
-                                                        } else {
-                                                            e.target.setCustomValidity("");
-                                                        }
-                                                    }}
-                                                    required
-                                                />
-                                                {confirmPassword && password !== confirmPassword && (
-                                                    <p className="text-red-500 text-sm font-semibold">
-                                                        Les mots de passe ne correspondent pas
-                                                    </p>
-                                                )}
-                                            </>
-                                        ) : (
-                                            <input
-                                                className="focus:border-[#e54922be] placeholder:text-[10px] sm:placeholder:text-[12px] placeholder:text-gray-400 focus:outline-none rounded-xl bg-[rgba(13,12,12,0.05)] border border-[rgba(255,255,255,0)] py-2 px-3 h-9 sm:h-10 text-sm sm:text-base"
-                                                type={input.type}
-                                                id={input.id}
-                                                name={input.name}
-                                                placeholder={input.placeholder}
-                                                onInvalid={(e) => {
-                                                    if (e.currentTarget.value.trim() === "") {
-                                                        e.currentTarget.setCustomValidity("Veuillez remplir ce champ");
-                                                    }
-                                                }}
-                                                onInput={(e) => {
-                                                    if (e.currentTarget.value.trim() !== "") {
-                                                        e.currentTarget.setCustomValidity("");
-                                                    }
-                                                }}
-                                                required
-                                            />
-                                        )
-                                }
+  const onSubmit: SubmitHandler<InscriptionFormInputs> = (data) => {
+    console.log({ form: data });
+    for (const field in data)
+      if (!field)
+        return;
+    navigate("/signup/role-choice");
+    /* Fetch API stuff */
+  }
 
-                            </div >
-                        ))
-                    }
-                </div>
-                <div className="mt-3.75 flex justify-center"
-                    style={{ fontSize: 'clamp(14px, 2vw, 20px)' }}>
-
-                    <PrimaryButton px="40px" fontSize="clamp(14px, 2vw, 20px)" classButton="px-4 sm:px-6" name="Accepter et s'inscrire" />
-                </div>
-            </form>
-            <div className="flex flex-row w-full justify-center items-center mt-4 gap-2">
-                <hr className="flex-1 h-px text-transparent bg-[#999]" />
-                <p className="text-xs sm:text-sm text-gray-600">ou</p>
-                <hr className="flex-1 h-px text-transparent bg-[#999]" />
-            </div>
-            <div className="mt-4 w-full flex justify-center">
-                <SecondaryButton name="Continuer avec Google" endIcon={<img src={GoogleIcone} alt="Google icon" />} />
-            </div>
-            <div className="mt-3">
-                <p className="text-[10px] sm:text-xs md:text-[12px] justify-center text-center leading-[150%]">
-                    En cliquant sur Continuer, vous acceptez les <br />
-                    <span className="text-[#E64A22]"> Conditions d'utilisation</span>
-                    , la <span className="text-[#E64A22]">Politique de confidentialité </span><br />
-                    et la <span className="text-[#E64A22]">Politique relative aux cookies</span> de Mikandra.
-                </p>
-            </div>
-
+  return (
+    <div>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col w-full h-full gap-4"
+        action="">
+        <div className="flex flex-col w-full h-full gap-4">
+          <h1 className="text-[#333] tracking-[-0.32px] text-[32px] font-bold leading-[130%]">
+            Créer un compte
+          </h1>
+          {/* Email input */}
+          <div className="flex flex-col gap-2">
+            <label htmlFor="email" className="self-stretch tracking-[0px] text-[#333] not-italic leading-[160%] pt-2.5">Email *</label>
+            <input
+              {...register("email")}
+              className="focus:border-[#e54922be] placeholder:text-[10px] sm:placeholder:text-[12px] placeholder:text-gray-400 focus:outline-none rounded-xl border border-[#e2e2e2] py-2 px-3 h-9 sm:h-10 text-sm sm:text-base"
+              type="email"
+              placeholder="exemple@gmail.com"
+              required />
+          </div>
+          {/* Password input */}
+          <div className="flex flex-col gap-2">
+            <label htmlFor="password" className="self-stretch tracking-[0px] text-[#333] not-italic leading-[160%] pt-2.5">Mot de passe *</label>
+            <input
+              {...register("password")}
+              className="focus:border-[#e54922be] placeholder:text-[10px] sm:placeholder:text-[12px] placeholder:text-gray-400 focus:outline-none rounded-xl border border-[#e2e2e2] py-2 px-3 h-9 sm:h-10 text-sm sm:text-base"
+              type="password"
+              placeholder="Votre mot de passe"
+              required />
+            {/* Check for password strength */}
+            {
+              (password.length > 0)
+              &&
+              (<p className={`text-sm font-semibold ${security === "Faible"
+                ? "text-red-500"
+                : security === "Moyen"
+                  ? "text-gray-500"
+                  : "text-green-500"
+                }`}>{security}</p>)
+            }
+          </div>
+          {/* Confirm password input */}
+          <div className="flex flex-col gap-2">
+            <label htmlFor="test" className="self-stretch tracking-[0px] text-[#333] not-italic leading-[160%] pt-2.5">Confirmer le mot de passe *</label>
+            <input
+              {...register("confirmPassword")}
+              className="focus:border-[#e54922be] placeholder:text-[10px] sm:placeholder:text-[12px] placeholder:text-gray-400 focus:outline-none rounded-xl border border-[#e2e2e2] py-2 px-3 h-9 sm:h-10 text-sm sm:text-base"
+              type="password"
+              placeholder="Confirmez votre mot de passe"
+              required />
+            {/* Check if passwords are identic */}
+            {
+              (confirmPassword.length > 0 && confirmPassword !== password) && <small className="text-red-500">Mots de passe incoherents</small>
+            }
+          </div>
         </div>
-    )
+        <div className="mt-3.75 flex justify-center" style={{ fontSize: 'clamp(14px, 2vw, 20px)' }}>
+          <button className="bg-gray-800 text-white text-base px-5 py-3 rounded-full" type="submit">Suivant</button>
+        </div>
+      </form>
+      <div className="flex flex-row w-full justify-center items-center mt-4 gap-2">
+        <hr className="flex-1 h-px text-transparent bg-[#999]" />
+        <p className="text-xs sm:text-sm text-gray-600">ou</p>
+        <hr className="flex-1 h-px text-transparent bg-[#999]" />
+      </div>
+      <div className="mt-4 w-full flex justify-center">
+        <SecondaryButton name="Continuer avec Google" endIcon={<img src={GoogleIcone} alt="Google icon" />} />
+      </div>
+      <div className="mt-3">
+        <small className="text-[8px] sm:text-xs md:text-[12px] justify-center text-center leading-[150%]">
+          En cliquant sur "suivant", vous acceptez les <br />
+          <span className="text-[#E64A22]"> Conditions d'utilisation</span>
+          , la <span className="text-[#E64A22]">Politique de confidentialité </span><br />
+          et la <span className="text-[#E64A22]">Politique relative aux cookies</span> de Mikandra.
+        </small>
+      </div>
+    </div>
+  )
 }
