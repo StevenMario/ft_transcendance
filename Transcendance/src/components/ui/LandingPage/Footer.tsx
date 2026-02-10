@@ -1,6 +1,6 @@
 import { Linkedin, Facebook, Twitter } from "lucide-react";
 import logo from "../../../assets/logo.svg";
-import SingUpButton from "../NavBar/SingUpButton.tsx";
+import SingUpButton from "../NavBar/SignUpButton.tsx";
 import PrimaryButton from "../Button/PrimaryButton.tsx";
 
 const Footer = () => {
@@ -14,16 +14,26 @@ const Footer = () => {
               <img className="w-30" src={logo} alt="Logo" />
             </div>
             <p className="text-sm text-gray-500 mb-4">
-              Mettre en relation les clients avec les meilleurs professionnels locaux.
+              Mettre en relation les clients avec les meilleurs professionnels
+              locaux.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-400 hover:bg-orange-600 hover:text-white transition-all">
+              <a
+                href="#"
+                className="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-400 hover:bg-orange-600 hover:text-white transition-all"
+              >
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-400 hover:bg-orange-600 hover:text-white transition-all">
+              <a
+                href="#"
+                className="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-400 hover:bg-orange-600 hover:text-white transition-all"
+              >
                 <Facebook size={18} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-400 hover:bg-orange-600 hover:text-white transition-all">
+              <a
+                href="#"
+                className="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-400 hover:bg-orange-600 hover:text-white transition-all"
+              >
                 <Twitter size={18} />
               </a>
             </div>
@@ -40,10 +50,30 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Site Map</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-gray-500 hover:text-amber-500 transition-colors">Accueil?</a></li>
-              <li><a href="#" className="text-sm text-gray-500 hover:text-amber-500 transition-colors">Explorer</a></li>
-              <li><a href="#" className="text-sm text-gray-500 hover:text-amber-500 transition-colors">A propos</a></li>
-              
+              <li>
+                <a
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-amber-500 transition-colors"
+                >
+                  Accueil?
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-amber-500 transition-colors"
+                >
+                  Explorer
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-amber-500 transition-colors"
+                >
+                  A propos
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -52,15 +82,12 @@ const Footer = () => {
             <div className="flex flex-col gap-3">
               <PrimaryButton name="Se connecter" />
               <SingUpButton />
-
             </div>
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-border text-center">
-          <p className="text-xs text-muted-foreground">
-            ©2025 M'kandra
-          </p>
+          <p className="text-xs text-muted-foreground">©2025 M'kandra</p>
         </div>
       </div>
     </footer>

@@ -1,9 +1,9 @@
 import logo from "../../../assets/logo.svg";
-import PrimaryButton from '../Button/PrimaryButton.tsx'
-import SingUpButton from "./SingUpButton.tsx";
-import MenuIcon from '@mui/icons-material/Menu';
+import PrimaryButton from "../Button/PrimaryButton.tsx";
+import SingUpButton from "./SignUpButton.tsx";
+import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 import {
   Drawer,
   IconButton,
@@ -20,7 +20,6 @@ interface NavBarProps {
 const listItemTexts = ["Accueil", "Explorer", "A propos"];
 
 export default function NavBar({ hide = false }: NavBarProps) {
-
   const [open, setOpen] = useState<boolean>(false);
   const drawerContent = (
     <div className="w-64">
@@ -29,10 +28,13 @@ export default function NavBar({ hide = false }: NavBarProps) {
           return (
             <ListItem key={index}>
               <ListItemButton className="flex justify-center">
-                <ListItemText primary={listItemText} sx={{ textAlign: "center" }} />
+                <ListItemText
+                  primary={listItemText}
+                  sx={{ textAlign: "center" }}
+                />
               </ListItemButton>
             </ListItem>
-          )
+          );
         })}
         <ListItem className="flex  flex-col justify-between items-center">
           <SingUpButton />
@@ -46,8 +48,7 @@ export default function NavBar({ hide = false }: NavBarProps) {
 
   const toggleDrawer = (check: boolean) => {
     setOpen(check);
-  }
-
+  };
 
   return (
     <>
@@ -62,25 +63,30 @@ export default function NavBar({ hide = false }: NavBarProps) {
                 return (
                   <ListItem key={index}>
                     <ListItemButton className="flex justify-center">
-                      <ListItemText className="w-max" primary={listItemText} sx={{ textAlign: "justify" }} />
+                      <ListItemText
+                        className="w-max"
+                        primary={listItemText}
+                        sx={{ textAlign: "justify" }}
+                      />
                     </ListItemButton>
                   </ListItem>
-                )
+                );
               })}
             </div>
             <div className="flex gap-5">
               <SingUpButton />
-              <PrimaryButton name="Se Connecter" />
+              <PrimaryButton name="Se connecter" />
             </div>
           </>
         )}
-        {
-          hide && (
-            <p className="mt-3 text-xs sm:text-sm md:text-[16px] font-bold leading-[160%]">
-              Déjà inscrit(e) ? <a href="#" className="text-[#E64A22]">S'identifier</a>
-            </p>
-          )
-        }
+        {hide && (
+          <p className="mt-3 text-xs sm:text-sm md:text-[16px] font-bold leading-[160%]">
+            Déjà inscrit(e) ?{" "}
+            <a href="#" className="text-[#E64A22]">
+              S'identifier
+            </a>
+          </p>
+        )}
       </nav>
       {/* Responsive md */}
       <nav className="max-w-7xl z-50 mx-auto px-4 py-4 flex lg:hidden items-center justify-between">
@@ -107,13 +113,14 @@ export default function NavBar({ hide = false }: NavBarProps) {
             </Drawer>
           </>
         )}
-        {
-          hide && (
-            <p className=" text-xs sm:text-sm md:text-[16px] font-bold leading-[160%]">
-              Déjà inscrit(e) ? <a href="#" className="text-[#E64A22]">S'identifier</a>
-            </p>
-          )
-        }
+        {hide && (
+          <p className=" text-xs sm:text-sm md:text-[16px] font-bold leading-[160%]">
+            Déjà inscrit(e) ?{" "}
+            <a href="#" className="text-[#E64A22]">
+              S'identifier
+            </a>
+          </p>
+        )}
       </nav>
     </>
   );

@@ -5,18 +5,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 function RoleChoice() {
-
   const [role, setRole] = useState<string>("");
   const navigate = useNavigate();
 
   const handleChange = () => {
     // Logic to handle role change can be added here
-    if (!role)
-      return;
+    if (!role) return;
     navigate("/signup/complete-profile/" + role);
-
-  }
-
+  };
 
   return (
     <div>
@@ -24,16 +20,26 @@ function RoleChoice() {
         Quel est votre rôle ?
       </h1>
       <div>
-        <RadioGroup
-          value={role}
-          onChange={(e) => setRole(e.target.value)} >
-          <FormControlLabel value="client" control={<Radio color="error" />} label="Client" />
-          <FormControlLabel value="prestataire" control={<Radio color="error" />} label="Prestataire" />
-          <FormControlLabel value="entreprise" control={<Radio color="error" />} label="Entreprise" />
+        <RadioGroup value={role} onChange={(e) => setRole(e.target.value)}>
+          <FormControlLabel
+            value="client"
+            control={<Radio color="error" />}
+            label="Client"
+          />
+          <FormControlLabel
+            value="prestataire"
+            control={<Radio color="error" />}
+            label="Prestataire"
+          />
+          <FormControlLabel
+            value="entreprise"
+            control={<Radio color="error" />}
+            label="Entreprise"
+          />
         </RadioGroup>
         <div className="mt-3 flex flex-row justify-center gap-4">
-          <SecondaryButton name="Retour" />
-          <PrimaryButton name="Suivant" onClick={handleChange} type="button"/>
+          <SecondaryButton name="Retour" onClick={() => navigate(-1)} />
+          <PrimaryButton name="Suivant" onClick={handleChange} type="button" />
         </div>
       </div>
     </div>
