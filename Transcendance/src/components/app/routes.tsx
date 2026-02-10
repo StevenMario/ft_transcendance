@@ -14,12 +14,15 @@ import PrestataireLayout from '../ui/InscriptionForm/Prestatire/PrestatireLayout
 import PrestataireExtra from '../ui/InscriptionForm/Prestatire/PrestatireExtra.tsx'
 import EntrepriseLayout from '../ui/InscriptionForm/Entreprise/EntrepriseLayout.tsx'
 import EntrepriseExtra from '../ui/InscriptionForm/Entreprise/EntrepriseExtra.tsx'
+import CguLayout from '../ui/CguPage/CguLayout.tsx'
 
 const router = createBrowserRouter([
+  /* INDEX - HOME */
   {
     path: '/',
     element: <App />,
   },
+  /* SIGNUP */
   {
     path: '/signup',
     element: <SignUpLayout />,
@@ -63,6 +66,11 @@ const router = createBrowserRouter([
         element: <FinishProfile />,
       }
     ],
+  },
+  /* CONDITION D'UTILISATION */
+  {
+    path: '/cgu',
+    element: <CguLayout />
   }
 ])
 
