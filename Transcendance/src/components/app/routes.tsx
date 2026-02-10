@@ -1,30 +1,28 @@
-import {
-  createBrowserRouter,
-  Outlet,
-} from 'react-router-dom'
-import App from '../../App'
-import StepAccount from '../ui/InscriptionForm/StepAccount.tsx'
-import RoleChoice from '../ui/InscriptionForm/RoleChoice.tsx'
-import SignUpLayout from '../ui/InscriptionForm/SignUpLayout.tsx'
-import FinishProfile from '../ui/InscriptionForm/FinishProfile.tsx'
-import ClientInfo from '../ui/InscriptionForm/Client/ClientInfo.tsx'
-import PrestataireInfo from '../ui/InscriptionForm/Prestatire/PrestataireInfo.tsx'
-import EntrepriseInfo from '../ui/InscriptionForm/Entreprise/EntrepriseInfo.tsx'
-import PrestataireLayout from '../ui/InscriptionForm/Prestatire/PrestatireLayout.tsx'
-import PrestataireExtra from '../ui/InscriptionForm/Prestatire/PrestatireExtra.tsx'
-import EntrepriseLayout from '../ui/InscriptionForm/Entreprise/EntrepriseLayout.tsx'
-import EntrepriseExtra from '../ui/InscriptionForm/Entreprise/EntrepriseExtra.tsx'
-import CguLayout from '../ui/CguPage/CguLayout.tsx'
+import { createBrowserRouter, Outlet } from "react-router-dom";
+import App from "../../App";
+import StepAccount from "../ui/InscriptionForm/StepAccount.tsx";
+import RoleChoice from "../ui/InscriptionForm/RoleChoice.tsx";
+import SignUpLayout from "../ui/InscriptionForm/SignUpLayout.tsx";
+import FinishProfile from "../ui/InscriptionForm/FinishProfile.tsx";
+import ClientInfo from "../ui/InscriptionForm/Client/ClientInfo.tsx";
+import PrestataireInfo from "../ui/InscriptionForm/Prestatire/PrestataireInfo.tsx";
+import EntrepriseInfo from "../ui/InscriptionForm/Entreprise/EntrepriseInfo.tsx";
+import PrestataireLayout from "../ui/InscriptionForm/Prestatire/PrestatireLayout.tsx";
+import PrestataireExtra from "../ui/InscriptionForm/Prestatire/PrestatireExtra.tsx";
+import EntrepriseLayout from "../ui/InscriptionForm/Entreprise/EntrepriseLayout.tsx";
+import EntrepriseExtra from "../ui/InscriptionForm/Entreprise/EntrepriseExtra.tsx";
+import CguPage from "../ui/pages/CguPage.tsx";
+import PolicyPage from "../ui/pages/PolicyPage.tsx";
 
 const router = createBrowserRouter([
   /* INDEX - HOME */
   {
-    path: '/',
+    path: "/",
     element: <App />,
   },
   /* SIGNUP */
   {
-    path: '/signup',
+    path: "/signup",
     element: <SignUpLayout />,
     children: [
       {
@@ -32,7 +30,7 @@ const router = createBrowserRouter([
         element: <StepAccount />,
       },
       {
-        path: 'role-choice',
+        path: "role-choice",
         element: <RoleChoice />,
       },
       {
@@ -62,16 +60,21 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: 'finish-profile',
+        path: "finish-profile",
         element: <FinishProfile />,
-      }
+      },
     ],
   },
   /* CONDITION D'UTILISATION */
   {
-    path: '/cgu',
-    element: <CguLayout />
-  }
-])
+    path: "/cgu",
+    element: <CguPage />,
+  },
+  /* POLITIQUE DE CONFIDENTIALITE */
+  {
+    path: "/policy",
+    element: <PolicyPage />,
+  },
+]);
 
-export default router
+export default router;
