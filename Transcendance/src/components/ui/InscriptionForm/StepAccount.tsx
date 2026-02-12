@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import { passwordStrength } from "./PasswordUtils";
 import { useForm, useWatch } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
+import PrimaryButton from "../Button/PrimaryButton";
 
 type InscriptionFormInputs = {
   email: string;
@@ -114,12 +115,13 @@ export default function InscriptionForm() {
           className="mt-3.75 flex justify-center"
           style={{ fontSize: "clamp(14px, 2vw, 20px)" }}
         >
-          <button
+          <PrimaryButton name={"Suivant"}/>
+          {/* <button
             className="bg-gray-800 text-white text-base px-5 py-3 rounded-full"
             type="submit"
           >
             Suivant
-          </button>
+          </button> */}
         </div>
       </form>
       <div className="flex flex-row w-full justify-center items-center mt-4 gap-2">

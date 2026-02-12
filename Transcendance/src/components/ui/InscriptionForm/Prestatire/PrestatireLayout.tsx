@@ -1,5 +1,7 @@
+import { Outlet } from "react-router-dom";
+
 function PrestataireLayout()
 {
-    return <div>Prestataire Layout</div>
+    return <Outlet></Outlet>
 }
 export default PrestataireLayout;

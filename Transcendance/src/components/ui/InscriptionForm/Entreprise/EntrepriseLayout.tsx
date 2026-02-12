@@ -1,8 +1,6 @@
 import { Outlet } from "react-router";
 
 function EntrepriseLayout() {
-    return <div>
-        <Outlet></Outlet>
-    </div>
+    return <Outlet></Outlet>
 }
 export default EntrepriseLayout;

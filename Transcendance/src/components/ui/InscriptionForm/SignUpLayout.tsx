@@ -1,10 +1,21 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
+import { LinearProgress } from '@mui/material';
 function SignUpLayout() {
   return (
     <section className="relative h-max  overflow-hidden px-5  ">
       {/* Content */}
       <NavBar hide={true} />
+      <LinearProgress 
+        variant="determinate" 
+        value={50} 
+        sx={{ 
+          backgroundColor: "#A6A6A6",
+          "& .MuiLinearProgress-bar": {
+            backgroundColor: "#E64A22"
+          }
+        }} 
+      />
       <div className="relative md:-mt-7.5 ">
         <div className="flex justify-center items-center min-h-screen ">
           <div className="

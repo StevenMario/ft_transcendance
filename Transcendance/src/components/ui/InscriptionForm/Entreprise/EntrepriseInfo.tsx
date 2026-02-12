@@ -41,7 +41,7 @@ function EntrepriseInfo() {
         navigate('/signup/complete-profile/entreprise/extra');
     }
     return (
-        <div className="w-full px-5">
+        <div className="w-full px-[40px]">
 
             <form
              onSubmit={handleSubmit}
@@ -53,13 +53,13 @@ function EntrepriseInfo() {
                     </h1>
                     {
                         entrepriseInfo.map((input, index) => (
-                            <div className="flex flex-col gap-2" key={index}>
+                            <div className="flex flex-col w-full gap-2" key={index}>
                                 <label
-                                    className="text-sm sm:text-base md:text-[20px] self-stretch tracking-[0px] text-[#333] not-italic font-bold leading-[160%]"
+                                    className="self-stretch tracking-[0px] text-[#333] not-italic leading-[160%] pt-2.5"
                                     htmlFor={input.id}>{input.label}
                                 </label>
                                 <input
-                                    className="focus:border-[#e54922be] placeholder:text-[10px] sm:placeholder:text-[12px] placeholder:text-gray-400 focus:outline-none rounded-xl bg-[rgba(13,12,12,0.05)] border border-[rgba(255,255,255,0)] py-2 px-3 h-9 sm:h-10 text-sm sm:text-base"
+                                    className="focus:border-[#e54922be] placeholder:text-[10px] sm:placeholder:text-[12px] placeholder:text-gray-400 focus:outline-none rounded-xl border border-[#e2e2e2] py-2 px-3 h-9 sm:h-10 text-sm sm:text-base"
                                     type={input.type}
                                     id={input.id}
                                     name={input.name}
