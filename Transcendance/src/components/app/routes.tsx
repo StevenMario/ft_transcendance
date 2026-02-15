@@ -13,12 +13,23 @@ import EntrepriseLayout from "../ui/InscriptionForm/Entreprise/EntrepriseLayout.
 import EntrepriseExtra from "../ui/InscriptionForm/Entreprise/EntrepriseExtra.tsx";
 import CguPage from "../ui/pages/CguPage.tsx";
 import PolicyPage from "../ui/pages/PolicyPage.tsx";
+import ProtectedRoute from "../ui/ProtectedRoute.tsx";
+import ClientDashboardLayout from "../ui/Client/ClientDashboardLayout.tsx";
+import ClientHome from "../ui/Client/ClientHome.tsx";
+import ClientServices from "../ui/Client/ClientServices.tsx";
+import ClientProfil from "../ui/Client/ClientProfile.tsx";
+import ClientMessages from "../ui/Client/ClientMessages.tsx";
+import Login from "../ui/LoginForm/Login.tsx";
 
 const router = createBrowserRouter([
   /* INDEX - HOME */
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   /* SIGNUP */
   {
@@ -75,6 +86,24 @@ const router = createBrowserRouter([
     path: "/policy",
     element: <PolicyPage />,
   },
+   /* DASHBOARD CLIENT */
+  {
+    path: "/dashboard/client",
+    element: (
+      <ProtectedRoute allowedRoles={["client"]}>
+        <ClientDashboardLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      { index: true, element: <ClientHome /> },
+      { path: "services", element: <ClientServices /> },
+      { path: "profil", element: <ClientProfil /> },
+      { path: "messages", element: <ClientMessages /> },
+    ],
+  },
+
 ]);
+
+
 
 export default router;

@@ -21,7 +21,7 @@ function SignUpLayout() {
           <div className="
                         flex 
                         flex-col 
-                        rounded-[5px]
+                        rounded-2xl
                         shadow-[0_12px_24px_0_rgba(0,0,0,0.10),0_0_10px_0_rgba(0,0,0,0.08)]
                         border
                         border-[#E5E5E5]
@@ -37,12 +37,12 @@ function SignUpLayout() {
                         sm:py-8
                         backdrop-blur-[250px]
                         max-w-119.5">
-            <Outlet></Outlet>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+                        <Outlet></Outlet>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 }
 
 export default SignUpLayout;

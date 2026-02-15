@@ -48,7 +48,7 @@ function EntrepriseInfo() {
                 className="flex flex-col w-full gap-4"
                 action="">
                 <div className="flex flex-col w-full gap-4">
-                    <h1 className="text-[#333] tracking-[-0.32px]  text-[24px] md:text-[32px] font-bold leading-[130%]">
+                    <h1 className="text-[#333] tracking-[-0.32px] text-[32px] font-bold leading-[130%]">
                         Complétez votre profil
                     </h1>
                     {

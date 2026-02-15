@@ -75,7 +75,7 @@ export default function NavBar({ hide = false }: NavBarProps) {
             </div>
             <div className="flex gap-5">
               <SingUpButton />
-              <PrimaryButton name="Se connecter" />
+              <PrimaryButton name="Se connecter" path="/login" />
             </div>
           </>
         )}
